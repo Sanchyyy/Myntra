@@ -1,0 +1,15 @@
+{
+  "name": "new-folder",
+  "version": "1.0.0",
+  "main": "script.js",
+  "scripts": {
+    "build": "sass --no-source-map --watch ./src/landing.scss:./dist/landing.css ./src/main.scss:./dist/style.css"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "sass": "^1.85.1"
+  }
+}

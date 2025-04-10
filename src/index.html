@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Myntra</title>
+    <link rel="stylesheet" href="../dist/style.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="navbar">
+            <div class="navbar__logo">
+                <img class="navbar__logo-img" src="./assets/myntra.svg" alt="logo">
+            </div>
+            <div class="navbar__links">
+                <a class="navbar__link" href="">MEN</a>
+                <a class="navbar__link" href="">WOMEN</a>
+                <a class="navbar__link" href="">KIDS</a>
+                <a class="navbar__link" href="">HOME</a>
+                <a class="navbar__link" href="">BEAUTY</a>
+                <a class="navbar__link" href="">GENZ</a>
+                <a class="navbar__link" href="">STUDIO <sup>NEW</sup></a>
+            </div>
+            <div class="navbar__search">
+                <img src="./assets/search.png" alt="search">
+                <label class="navbar__search-label" for="search"></label>
+                <input class="navbar__search-input" type="search" id="search" name="search"
+                    placeholder="Search for products, brands and more">
+            </div>
+            <div class="navbar__userItems">
+                <div class="navbar__userItems--profile">
+                    <img src="./assets/profile.png" alt="profile">
+                    <h4>Profile</h4>
+                </div>
+                <div class="navbar__userItems--wishlist">
+                    <img src="./assets/wishlist.png" alt="wishlist">
+                    <h4>Wishlist</h4>
+
+                </div>
+                <div class="navbar__userItems--bag">
+                    <img src="./assets/bag.png" alt="bag">
+                    <h4>Bag</h4>
+
+                </div>
+            </div>
+        </div>
+
+        <section>
+            <div class="sale">
+                <p>Sale Ends</p>
+            </div>
+        </section>
+        <section class="products">
+            <div class="products__link">
+                <p>Footwear/Casual Shoes/ <strong>Flat & Casual Shoes</strong> </p>
+            </div>
+            <div class="products__count">
+                <strong>Flat & Casual Shoes</strong> -836 Items
+            </div>
+            <div class="products__content">
+                <div class="products__filters">
+                    <div class="products__filters--heading">
+                        <span class="products__filters--title">FILTERS</span>
+                        <span class="products__filters--clear">CLEAR ALL</span>
+                    </div>
+
+                    <div class="products__filters--list">
+                        <!-- 1st -->
+                        <div class="products__filters--brand">
+                            <div class="products__filters-header">
+                                <div class="products__filters-top">
+                                    <h3 class="products__filters--brand--title">Brand</h3>
+                                    <img src="./assets/search.png" id="filterSearch" alt="">
+                                </div>
+                                <div class="products__filters-bottom">
+                                        <div class="products__filters-search">
+                                            <label class="products__filters-label" for="search"></label>
+                                            <input class="products__filters-input" type="search" id="search" name="search"
+                                                placeholder="Search for Brands">
+                                            <img src="./assets/cross.png" alt="search">
+                                        </div>                     
+                                    </div>
+                            </div>
+
+                            <div class="products__filters--brand-options" id="brandFilters">
+                            </div>
+                        </div>
+
+                        <!-- 2nd -->
+                        <div class="products__filters--price">
+                            <div class="products__filters-header">
+                                <h3 class="products__filters--brand--title">Price</h3>
+                            </div>
+
+                            <div class="products__filters--price-container">
+                                <div class="products__filters--price-slider" id="priceSliderTrack"></div>
+
+                                <input type="range" class="left" id="sliderMin" min="0" max="10000" value="0"
+                                    step="100">
+                                <input type="range" class="right" id="sliderMax" min="0" max="10000" value="10000"
+                                    step="100">
+
+                                <div class="products__filters--price-label">
+                                    ₹<span id="minVal">0</span> - ₹<span id="maxVal">10000+</span>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <!-- 3 -->
+                        <div class="products__filters--brand">
+                            <div class="products__filters-header">
+                                <div class="products__filters-top">
+                                    <h3 class="products__filters--brand--title">DISCOUNT RANGE</h3>
+                                </div>
+
+                            </div>
+                            <div class="products__filters--brand-options">
+                                <div class="products__filters--brand-option">
+                                    <input type="checkbox" id="discount10" name="discount10" value="discount10">
+                                    <label for="discount10">10% and above</label>
+                                </div>
+                                <div class="products__filters--brand-option">
+                                    <input type="checkbox" id="discount20" name="discount20" value="discount20">
+                                    <label for="discount20">20% and above</label>
+                                </div>
+                                <div class="products__filters--brand-option">
+                                    <input type="checkbox" id="discount30" name="discount30" value="discount30">
+                                    <label for="discount30">30% and above</label>
+                                </div>
+                                <div class="products__filters--brand-option">
+                                    <input type="checkbox" id="discount40" name="discount40" value="discount40">
+                                    <label for="discount40">40% and above</label>
+                                </div>
+                                <div class="products__filters--brand-option">
+                                    <input type="checkbox" id="discount50" name="discount50" value="discount50">
+                                    <label for="discount50">50% and above</label>
+                                </div>
+
+                            </div>
+                        </div>
+
+
+                    </div>
+
+                </div>
+                <div class="products__cards">
+                    <div class="products__cards-top">
+                        <div class="products__filters-row">
+                            <div class="products__filters-list">
+                                <ul class="products__filters-list-items">
+                                    <li class="products__filters-list-item">
+                                        <p>Ankle Height</p>
+                                        <img src="./assets/accordian.png" alt="accordion">
+                                    </li>
+                                    <li class="products__filters-list-item">
+                                        <p>Bundles</p>
+                                        <img src="./assets/accordian.png" alt="accordion">
+                                    </li>
+                                    <li class="products__filters-list-item">
+                                        <p>Country of Origin</p>
+                                        <img src="./assets/accordian.png" alt="accordion">
+                                    </li>
+                                    <li class="products__filters-list-item">
+                                        <p>Fastening</p>
+                                        <img src="./assets/accordian.png" alt="accordion">
+                                    </li>
+                                    <li class="products__filters-list-item">
+                                        <p>Insole</p>
+                                        <img src="./assets/accordian.png" alt="accordion">
+                                    </li>
+                                    <li class="products__filters-list-item">
+                                        <p>Material</p>
+                                        <img src="./assets/accordian.png" alt="accordion">
+                                    </li>
+                                    <li class="products__filters-list-item">
+                                        <p>Micro Trend</p>
+                                        <img src="./assets/accordian.png" alt="accordion">
+                                    </li>
+
+                                </ul>
+                            </div>
+                            <div class="products__filters-dropdown">
+                                <button class="products__filters-dropdown-toggle">Sort By : Recommended
+                                    <img src="./assets/accordian.png" alt="accordian">
+                                </button>
+                                <ul class="products__filters-dropdown-menu">
+                                    <li>Recommended</li>
+                                    <li>What's New</li>
+                                    <li>Popularity</li>
+                                    <li>Price: Low to High</li>
+                                    <li>Price: High to Low</li>
+                                    <li>Customer Rating</li>
+                                </ul>
+                            </div>
+
+                        </div>
+                        <div class="products__filters--summary">
+                                
+                        </div>
+                    </div>
+
+                    <div class="products__cards-bottom">
+                        <div class="products__cards-card" id="productContainer"></div>
+                        <div class="products__cards-error"></div>
+
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+        <div class="sidebar">
+            <h4>UPTO Rs. 200 OFF</h4>
+        </div>
+
+
+    </div>
+
+
+    <script src="./script.js"></script>
+</body>
+
+</html>

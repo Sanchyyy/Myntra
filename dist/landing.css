@@ -1,0 +1,95 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+}
+
+body {
+  color: black;
+  overflow-x: hidden;
+}
+
+.container {
+  width: 100%;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.0625rem 2.5rem 1.0625rem 3.125rem;
+  box-shadow: 0 0.25rem 0.75rem 0 rgba(0, 0, 0, 0.05);
+}
+.navbar__logo img {
+  width: 3.4375rem;
+  height: auto;
+  cursor: pointer;
+}
+.navbar__links {
+  display: flex;
+  align-items: center;
+  gap: 1.875rem;
+  margin-right: 1.2%;
+}
+.navbar__links .navbar__link {
+  text-decoration: none;
+  color: #282c3f;
+  font-size: 0.8125rem;
+  font-weight: 700;
+}
+.navbar__links .navbar__link sup {
+  color: #ff3f6c;
+  font-size: 0.625rem;
+  line-height: 0;
+}
+.navbar__search {
+  display: flex;
+  align-items: center;
+  width: 23.125rem;
+  border-radius: 0.3125rem;
+  background-color: #f5f5f6;
+}
+.navbar__search img {
+  margin-left: 0.625rem;
+  width: 1.25rem;
+  height: auto;
+}
+.navbar__search .navbar__search-label {
+  margin-right: 0.5rem;
+  font-size: 0.875rem;
+}
+.navbar__search .navbar__search-input {
+  padding: 0.75rem;
+  border-radius: 1.25rem;
+  border: none;
+  width: 18.75rem;
+  outline: none;
+  font-size: 0.875rem;
+  background-color: #f5f5f6;
+}
+.navbar__userItems {
+  display: flex;
+  gap: 1.25rem;
+  margin-right: 0;
+}
+.navbar__userItems .navbar__userItems--profile,
+.navbar__userItems .navbar__userItems--wishlist,
+.navbar__userItems .navbar__userItems--bag {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.3125rem;
+  cursor: pointer;
+}
+.navbar__userItems .navbar__userItems--profile img,
+.navbar__userItems .navbar__userItems--wishlist img,
+.navbar__userItems .navbar__userItems--bag img {
+  width: 1.125rem;
+  height: 1.125rem;
+}
+.navbar__userItems .navbar__userItems--profile h4,
+.navbar__userItems .navbar__userItems--wishlist h4,
+.navbar__userItems .navbar__userItems--bag h4 {
+  font-size: 0.75rem;
+}
