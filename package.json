@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "script.js",
   "scripts": {
-    "build": "sass --no-source-map --watch ./src/landing.scss:./dist/landing.css ./src/main.scss:./dist/style.css"
+    "build": "sass --no-source-map --watch ./src/landing.scss:./src/landing.css ./src/main.scss:./src/style.css"
   },
   "keywords": [],
   "author": "",

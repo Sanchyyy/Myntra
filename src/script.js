@@ -13,6 +13,7 @@ const error=document.querySelector(".products__cards-error")
 const filterSummary=document.querySelector(".products__filters--summary")
 
 
+
 logo.addEventListener("click",function reload(e){
     window.location.href="landing.html"
 })
@@ -106,7 +107,8 @@ search.addEventListener("input",function(){
 
 function dispayProducts(products){
     const container=document.getElementById("productContainer");
-    container.innerHTML=" ";
+    container.innerHTML="";
+    
 
     if (products.length === 0) {
         error.innerHTML = `No Products Found`;
@@ -141,7 +143,7 @@ function dispayProducts(products){
 
 const minGap = 100;
 
-function updateSlider() {
+function updateSlider(e) {
   const min = parseInt(sliderMin.value);
   const max = parseInt(sliderMax.value);
 
@@ -155,6 +157,8 @@ function updateSlider() {
 
   minVal.textContent = sliderMin.value;
   maxVal.textContent = sliderMax.value === "10000" ? "10000+" : sliderMax.value;
+
+  checkFilter()
 }
 
 sliderMin.addEventListener("input", updateSlider);
@@ -162,42 +166,69 @@ sliderMax.addEventListener("input", updateSlider);
 
 updateSlider();
 
-brandFilters.addEventListener("input",checkFilter)
 brandFilters.addEventListener("input", checkFilter);
 
 function checkFilter() {
-  const selectedInputs = Array.from(document.querySelectorAll('input[name="brand"]:checked'));
-
-  const selectedBrands = selectedInputs.map(input => input.value.toLowerCase());
-
-  filterSummary.innerHTML = "";
-
-  selectedInputs.forEach(input => {
-    const brand = input.value.toLowerCase();
-
-    const item = document.createElement("div");
-    item.className = "products__filters--summary-item";
-    item.innerHTML = `
-      ${brand.charAt(0).toUpperCase() + brand.slice(1)}
-      <img src="./assets/cross.png" alt="cross" style="cursor:pointer;">
-    `;
-
-    item.querySelector("img").addEventListener("click", () => {
-      input.checked = false;
-      checkFilter();
+    const selectedInputs = Array.from(document.querySelectorAll('input[name="brand"]:checked'));
+    const selectedBrands = selectedInputs.map(input => input.value.toLowerCase());
+  
+    const minPrice = parseInt(sliderMin.value);
+    const maxPrice = parseInt(sliderMax.value);
+  
+    filterSummary.innerHTML = "";
+  
+    selectedInputs.forEach(input => {
+      const brand = input.value;
+  
+      const item = document.createElement("div");
+      item.className = "products__filters--summary-item";
+      item.innerHTML = `
+        ${brand}
+        <img src="./assets/cross.png" alt="cross">
+      `;
+  
+      item.querySelector("img").addEventListener("click", () => {
+        input.checked = false;
+        checkFilter();
+      });
+  
+      filterSummary.appendChild(item);
     });
+    const priceItem = document.createElement("div");
+    priceItem.className = "products__filters--summary-item";
+    priceItem.innerHTML = `
+    ₹${minPrice} - ₹${maxPrice === 10000 ? '10000+' : maxPrice}
+    <img src="./assets/cross.png" alt="cross" >
+    `;
+    priceItem.querySelector("img").addEventListener("click", () => {
+        sliderMin.value = 0;
+        sliderMax.value = 10000;
+        updateSlider(); 
+      });
+    filterSummary.appendChild(priceItem);
+  
+    let filtered = products;
+  
+    if (selectedBrands.length > 0) {
+      filtered = filtered.filter(product =>
+        selectedBrands.includes(product.brand.toLowerCase())
+      );
+    }
+  
+    filtered = filtered.filter(product => {
+      return product.price >= minPrice && product.price <= maxPrice;
 
-    filterSummary.appendChild(item);
-  });
-
-  if (selectedBrands.length === 0) {
-    dispayProducts(products);
-    return;
+    });
+  
+    if (filtered.length === 0) {
+      error.innerHTML = `No Products Found`;
+    } else {
+      error.innerHTML = "";
+    }
+    if (selectedBrands.length === 0 && minPrice === 0 && maxPrice === 10000) {
+        filterSummary.innerHTML = "";
+      }
+  
+    dispayProducts(filtered);
   }
-
-  const filtered = products.filter(product =>
-    selectedBrands.includes(product.brand.toLowerCase())
-  );
-
-  dispayProducts(filtered);
-}
+  

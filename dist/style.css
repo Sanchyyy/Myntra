@@ -142,7 +142,7 @@ body {
   color: #ff3f6c;
   font-size: 0.8125rem;
 }
-.products__filters--brand {
+.products__filters--brand, .products__filters--discount {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -151,14 +151,14 @@ body {
   padding-top: 1.25rem;
   padding-bottom: 0.938rem;
 }
-.products__filters--brand--title {
+.products__filters--brand--title, .products__filters--discount--title {
   font-size: 0.938rem;
 }
-.products__filters--brand-options {
+.products__filters--brand-options, .products__filters--discount-options {
   display: flex;
   flex-direction: column;
 }
-.products__filters--brand-option {
+.products__filters--brand-option, .products__filters--discount-option {
   display: flex;
   gap: 1rem;
   color: #5c5c5d;
@@ -315,12 +315,12 @@ body {
   display: flex;
   gap: 1rem;
   flex-wrap: wrap;
+  white-space: nowrap;
 }
 .products__filters--summary-item {
   display: flex;
   border: 1px solid #e9e9ed;
   border-radius: 0.625em;
-  width: min-content;
   padding: 0.35rem 1rem;
   gap: 0.5rem;
   align-items: center;
