@@ -646,7 +646,7 @@ body {
   margin-top: 0.2rem;
   background-color: white;
 }
-@media (max-width: 768px) {
+@media (max-width: 968px) {
   .mobile__bar {
     display: flex;
   }
