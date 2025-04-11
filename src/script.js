@@ -268,7 +268,7 @@ function checkFilter() {
   if (minPrice !== 0 || maxPrice !== 10000) {
       const priceItem = document.createElement("div");
       priceItem.className = "products__filters--summary-item";
-      priceItem.innerHTML = `₹${minPrice} - ₹${maxPrice === 10000 ? '10000+' : maxPrice} <img src="./assets/cross.png" alt="cross">`;
+      priceItem.innerHTML = `₹${minPrice} - ₹${maxPrice === 10000 ? '10000+' : maxPrice} <img class="products__filters--summary-image" src="./assets/cross.png" alt="cross">`;
 
       priceItem.querySelector("img").addEventListener("click", () => {
           sliderMin.value = 0;
@@ -282,7 +282,7 @@ function checkFilter() {
   selectedDiscounts.forEach(discount => {
       const item = document.createElement("div");
       item.className = "products__filters--summary-item";
-      item.innerHTML = `${discount}% and above <img src="./assets/cross.png" alt="cross">`;
+      item.innerHTML = `${discount}% and above <img class="products__filters--summary-image" src="./assets/cross.png" alt="cross">`;
 
       item.querySelector("img").addEventListener("click", () => {
           document.getElementById(`discount${discount}`).checked = false;
