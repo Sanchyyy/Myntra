@@ -18,92 +18,137 @@ body {
 }
 
 .navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1.0625rem 2.5rem 1.0625rem 3.125rem;
-    box-shadow: $navbar-shadow;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.0625rem 2.5rem 1.0625rem 3.125rem;
+  box-shadow: $navbar-shadow;
   
-    &__logo {
-      img {
-        width: 3.4375rem;
-        height: auto;
-        cursor: pointer;
-      }
-    }
-  
-    &__links {
-      display: flex;
-      align-items: center;
-      gap: 1.875rem;
-      margin-right: 1.2%;
-  
-      .navbar__link {
-        text-decoration: none;
-        color: $link-color;
-        font-size: 0.8125rem;
-        font-weight: 700;
-  
-        sup {
-          color: $sup-red;
-          font-size: 0.625rem;
-          line-height: 0;
-        }
-      }
-    }
-  
-    &__search {
-      display: flex;
-      align-items: center;
-      width: 23.125rem;
-      border-radius: 0.3125rem;
-      background-color: $bg-search;
-  
-      img {
-        margin-left: 0.625rem;
-        width: 1.25rem;
-        height: auto;
-      }
-  
-      .navbar__search-label {
-        margin-right: 0.5rem;
-        font-size: 0.875rem;
-      }
-  
-      .navbar__search-input {
-        padding: 0.75rem;
-        border-radius: 1.25rem;
-        border: none;
-        width: 18.75rem;
-        outline: none;
-        font-size: 0.875rem;
-        background-color: $bg-search;
-      }
-    }
-  
-    &__userItems {
-      display: flex;
-      gap: 1.25rem;
-      margin-right: 0;
-  
-      .navbar__userItems--profile,
-      .navbar__userItems--wishlist,
-      .navbar__userItems--bag {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 0.3125rem;
-        cursor: pointer;
-  
-        img {
-          width: 1.125rem;
-          height: 1.125rem;
-        }
-  
-        h4 {
-          font-size: 0.75rem;
-        }
+  @media(max-width:768px) {
+    padding: 1rem;
+  }
+
+  &__logo {
+    &-img {
+      width: 3.4375rem;
+      height: auto;
+      cursor: pointer;
+      @media(max-width:768px) {
+        width: 3rem;
+        
       }
     }
   }
-  
+
+  &__links {
+    display: flex;
+    align-items: center;
+    gap: 1.875rem;
+    margin-right: 1.2%;
+
+    @media(max-width:968px) {
+      display: none;
+      
+    }
+    &-link {
+      text-decoration: none;
+      color: $link-color;
+      font-size: 0.8125rem;
+      font-weight: 700;
+
+      &--sup {
+        color: $myntra-red;
+        font-size: 0.625rem;
+        line-height: 0;
+      }
+    }
+
+  }
+
+  &__search {
+    display: flex;
+    align-items: center;
+    width: 23.125rem;
+    border-radius: 0.3125rem;
+    background-color: $bg-search;
+    position: relative;
+    outline: none;
+
+
+    @media(max-width:768px) {
+      width: 16rem;
+      
+    }
+
+    
+
+    &-dropdown-menu{
+      display: none;
+      top: 100%;
+      list-style: none;
+      z-index: 2;
+      width: 100%;
+      position: absolute;
+      font-size: 16px;
+      color: $menu-font;
+      background-color: $white;
+      box-shadow: 0 4px 12px 0 rgba(0,0,0,.05);
+      padding:1rem 0.75rem ;
+
+    &-list{
+        padding: 0.2rem;
+        cursor: pointer;
+    }
+    }
+
+    &--img {
+      margin-left: 0.625rem;
+      width: 1.25rem;
+      height: auto;
+    }
+
+    &-input {
+      padding: 0.75rem;
+      border-radius: 1.25rem;
+      border: none;
+      width: 18.75rem;
+      outline: none;
+      font-size: 0.875rem;
+      background-color: $bg-search;
+    }
+  }
+
+  &__user-items {
+    display: flex;
+    gap: 1.25rem;
+    margin-right: 0;
+    @media(max-width:1200px) {
+      display: none;
+      
+    }
+
+
+    .navbar__user-items--profile,
+    .navbar__user-items--wishlist,
+    .navbar__user-items--bag {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.3125rem;
+      cursor: pointer;
+
+      &-image {
+        width: 1.125rem;
+        height: 1.125rem;
+      }
+
+      &-text{
+        font-size: 0.75rem;
+        
+      }
+    }
+  }
+}
+  .landing-image{
+    width: 100%;
+  }
